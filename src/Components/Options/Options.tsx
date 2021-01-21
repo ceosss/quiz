@@ -3,11 +3,10 @@ import "./Options.css";
 
 type OptionProps = {
   setScreen: React.Dispatch<React.SetStateAction<number>>;
-  option: string;
   setOption: React.Dispatch<React.SetStateAction<string>>;
 };
 
-const Options: React.FC<OptionProps> = ({ option, setOption, setScreen }) => {
+const Options: React.FC<OptionProps> = ({ setOption, setScreen }) => {
   const updateOption = (value: string) => {
     setOption(value);
     setScreen(2);

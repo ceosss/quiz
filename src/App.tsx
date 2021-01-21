@@ -10,15 +10,17 @@ const App = () => {
   const showScreen = () => {
     switch (screen) {
       case 1:
-        return (
-          <Options
-            option={option}
-            setOption={setOption}
-            setScreen={setScreen}
-          />
-        );
+        return <Options setOption={setOption} setScreen={setScreen} />;
       case 2:
-        return <Difficulty />;
+        return (
+          <Difficulty setDifficulty={setDifficulty} setScreen={setScreen} />
+        );
+      case 3:
+        return (
+          <div>
+            Selected {option} with {difficulty} difficulty
+          </div>
+        );
     }
   };
   return <div>{showScreen()}</div>;
