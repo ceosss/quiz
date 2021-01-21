@@ -1,0 +1,54 @@
+.difficulty {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.difficulty div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.difficulty div div {
+  width: 250px;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  margin: 30px;
+  font-size: 18px;
+  -webkit-transition: 400ms ease-in-out;
+  transition: 400ms ease-in-out;
+  cursor: pointer;
+}
+
+.difficulty div div:hover {
+  -webkit-box-shadow: 0 5px 15px #6800fa;
+          box-shadow: 0 5px 15px #6800fa;
+  font-size: 22px;
+}
+/*# sourceMappingURL=Difficulty.css.map */
