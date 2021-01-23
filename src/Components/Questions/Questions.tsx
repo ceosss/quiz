@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import getQuestions from "../../Helper/fetch";
+import Question from "../Question/Question";
 
 enum QuestionType {
   multiple,
   boolean,
 }
 
-interface Questions {
+export interface QuestionsInterface {
   category: string;
   correct_answer: string;
   difficulty: string;
@@ -21,7 +22,7 @@ interface QuestionsProps {
 }
 
 const Questions: React.FC<QuestionsProps> = ({ option, difficulty }) => {
-  const [questions, setQuestions] = useState<Questions[]>([]);
+  const [questions, setQuestions] = useState<QuestionsInterface[]>([]);
   useEffect(() => {
     const fetchQuestions = async () => {
       const data = await getQuestions(option, difficulty);
@@ -32,7 +33,10 @@ const Questions: React.FC<QuestionsProps> = ({ option, difficulty }) => {
   }, []);
   return (
     <div>
-      <p>Hey</p>
+      {questions &&
+        questions.map((question) => (
+          <Question data={question} key={question.question} />
+        ))}
     </div>
   );
 };
