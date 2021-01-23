@@ -23,7 +23,8 @@ interface QuestionsProps {
 
 const Questions: React.FC<QuestionsProps> = ({ option, difficulty }) => {
   const [questions, setQuestions] = useState<QuestionsInterface[]>([]);
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState<number>(0);
+  const [score, setScore] = useState<number>(0);
   useEffect(() => {
     const fetchQuestions = async () => {
       const data = await getQuestions(option, difficulty);
@@ -33,10 +34,13 @@ const Questions: React.FC<QuestionsProps> = ({ option, difficulty }) => {
     fetchQuestions();
   }, []);
   const nextQuestion = () => setCurrent(current + 1);
+  const updateScore = () => setScore(score + 10);
   return (
     <div>
-      {questions.length ? <Question data={questions[current]} /> : null}
-
+      score: {score}
+      {questions.length ? (
+        <Question data={questions[current]} updateScore={updateScore} />
+      ) : null}
       {current >= questions.length - 1 ? (
         <button>Submit</button>
       ) : (
