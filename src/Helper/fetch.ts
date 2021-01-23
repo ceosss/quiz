@@ -1,6 +1,7 @@
+import axios from "axios";
 const mapCategory = (category: string) => {
   switch (category) {
-    case "movie":
+    case "film":
       return 11;
     case "tv":
       return 14;
@@ -12,13 +13,12 @@ const mapCategory = (category: string) => {
 };
 
 const getQuestions = async (category: string, difficulty: string) => {
-  console.log(category, difficulty);
-
   const mappedCategory: number | undefined = mapCategory(category);
+  console.log(category, mappedCategory, difficulty);
   const url: string = `https://opentdb.com/api.php?amount=10&category=${mappedCategory}&difficulty=${difficulty}`;
 
-  const data = await fetch(url);
-  return data;
+  const data = await axios.get(url);
+  return data.data.results;
 };
 
 export default getQuestions;
