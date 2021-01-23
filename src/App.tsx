@@ -1,17 +1,14 @@
 import React, { useState } from "react";
 import Options from "./Components/Options/Options";
 import Difficulty from "./Components/Difficulty/Difficulty";
-import getQuestions from "./Helper/fetch";
 import "./App.css";
+import Questions from "./Components/Questions/Questions";
 
 const App = () => {
   const [screen, setScreen] = useState<number>(1);
   const [option, setOption] = useState<string>("");
   const [difficulty, setDifficulty] = useState<string>("");
-  const fetchQuestions = async () => {
-    const data = await getQuestions(option, difficulty);
-    console.log(data);
-  };
+
   const showScreen = () => {
     switch (screen) {
       case 1:
@@ -21,12 +18,7 @@ const App = () => {
           <Difficulty setDifficulty={setDifficulty} setScreen={setScreen} />
         );
       case 3:
-        return (
-          <div>
-            Selected {option} with {difficulty} difficulty
-            <button onClick={fetchQuestions}>Fetch Data</button>
-          </div>
-        );
+        return <Questions option={option} difficulty={difficulty} />;
     }
   };
   return <div>{showScreen()}</div>;
