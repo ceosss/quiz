@@ -39,7 +39,11 @@ const Questions: React.FC<QuestionsProps> = ({ option, difficulty }) => {
     <div>
       score: {score}
       {questions.length ? (
-        <Question data={questions[current]} updateScore={updateScore} />
+        <Question
+          data={questions[current]}
+          updateScore={updateScore}
+          key={questions[current].question}
+        />
       ) : null}
       {current >= questions.length - 1 ? (
         <button>Submit</button>

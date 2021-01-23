@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { QuestionsInterface } from "../Questions/Questions";
 
 interface QuestionProps {
@@ -7,8 +7,10 @@ interface QuestionProps {
 }
 
 const Question: React.FC<QuestionProps> = ({ data, updateScore }) => {
+  const [answered, setAnswered] = useState<boolean>(false);
   const options = [...data.incorrect_answers, data.correct_answer];
   const checkAnswer = (option: string) => {
+    setAnswered(true);
     if (option === data.correct_answer) return updateScore();
   };
   return (
@@ -17,7 +19,12 @@ const Question: React.FC<QuestionProps> = ({ data, updateScore }) => {
       <p>{data.type}</p>
 
       {options.map((option) => (
-        <button onClick={() => checkAnswer(option)}>{option}</button>
+        <button
+          onClick={() => checkAnswer(option)}
+          disabled={answered === true}
+        >
+          {option}
+        </button>
       ))}
     </div>
   );
