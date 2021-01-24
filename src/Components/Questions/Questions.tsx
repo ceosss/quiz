@@ -19,12 +19,20 @@ export interface QuestionsInterface {
 interface QuestionsProps {
   option: string;
   difficulty: string;
+  score: number;
+  setScreen: React.Dispatch<React.SetStateAction<number>>;
+  setScore: (arg0: any) => void;
 }
 
-const Questions: React.FC<QuestionsProps> = ({ option, difficulty }) => {
+const Questions: React.FC<QuestionsProps> = ({
+  option,
+  difficulty,
+  score,
+  setScreen,
+  setScore,
+}) => {
   const [questions, setQuestions] = useState<QuestionsInterface[]>([]);
   const [current, setCurrent] = useState<number>(0);
-  const [score, setScore] = useState<number>(0);
   useEffect(() => {
     const fetchQuestions = async () => {
       const data = await getQuestions(option, difficulty);
@@ -32,11 +40,12 @@ const Questions: React.FC<QuestionsProps> = ({ option, difficulty }) => {
       console.log(data);
     };
     fetchQuestions();
-  }, []);
+  }, [difficulty, option]);
   const nextQuestion = () => setCurrent(current + 1);
   const updateScore = () => setScore(score + 10);
+  const handleSubmit = () => setScreen(4);
   return (
-    <div>
+    <div className="questions">
       score: {score}
       {questions.length ? (
         <Question
@@ -46,7 +55,7 @@ const Questions: React.FC<QuestionsProps> = ({ option, difficulty }) => {
         />
       ) : null}
       {current >= questions.length - 1 ? (
-        <button>Submit</button>
+        <button onClick={handleSubmit}>Submit</button>
       ) : (
         <button onClick={nextQuestion}>Next</button>
       )}
