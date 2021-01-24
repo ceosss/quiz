@@ -43,7 +43,7 @@ const Questions: React.FC<QuestionsProps> = ({
   }, [difficulty, option]);
   const nextQuestion = () => setCurrent(current + 1);
   const updateScore = () => setScore(score + 10);
-  const handleSubmit = () => setScreen(4);
+  const handleSubmit = () => setScreen(5);
   return (
     <div className="questions">
       score: {score}
