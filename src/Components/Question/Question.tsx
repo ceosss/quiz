@@ -23,6 +23,7 @@ const Question: React.FC<QuestionProps> = ({ data, updateScore }) => {
           onClick={() => checkAnswer(option)}
           disabled={answered === true}
           dangerouslySetInnerHTML={{ __html: option }}
+          key={option}
         ></button>
       ))}
     </div>

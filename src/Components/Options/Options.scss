@@ -10,17 +10,54 @@
             width: 250px;
             height: 250px;
             margin: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             font-size: 18px;
             border-radius: 30px;
+            position: relative;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            opacity: 0.6;
             transition: 400ms ease-in-out;
             cursor: pointer;
+            p {
+                position: absolute;
+                top: 0px;
+                right: 20px;
+                text-transform: uppercase;
+                color: #000;
+                font-weight: bold;
+            }
             &:hover {
-                box-shadow: 0px 5px 15px #6800fa;
+                box-shadow: 0px 5px 10px #6800fa;
+                opacity: 0.9;
                 font-size: 24px;
+            }
+            &.film {
+                background-image: url("../../Assets/movie.jpg");
+                background-position: center;
+                background-size: cover;
+                &:hover {
+                    box-shadow: 0px 5px 10px #b8a3a0;
+                }
+            }
+            &.music {
+                background-image: url("../../Assets/music.jpg");
+                background-position: center;
+                background-size: cover;
+                p {
+                    color: #000;
+                }
+                &:hover {
+                    box-shadow: 0px 5px 10px #df5f3f;
+                }
+            }
+            &.tv {
+            }
+            &.game {
+                background-image: url("../../Assets/game.jpg");
+                background-position: center;
+                background-size: cover;
+                &:hover {
+                    box-shadow: 0px 5px 10px #11227a;
+                }
             }
         }
     }

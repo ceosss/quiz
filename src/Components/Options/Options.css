@@ -25,27 +25,67 @@
   width: 250px;
   height: 250px;
   margin: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   font-size: 18px;
   border-radius: 30px;
+  position: relative;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  opacity: 0.6;
   -webkit-transition: 400ms ease-in-out;
   transition: 400ms ease-in-out;
   cursor: pointer;
 }
 
+.options div div p {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: bold;
+}
+
 .options div div:hover {
-  -webkit-box-shadow: 0px 5px 15px #6800fa;
-          box-shadow: 0px 5px 15px #6800fa;
+  -webkit-box-shadow: 0px 5px 10px #6800fa;
+          box-shadow: 0px 5px 10px #6800fa;
+  opacity: 0.9;
   font-size: 24px;
+}
+
+.options div div.film {
+  background-image: url("../../Assets/movie.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.options div div.film:hover {
+  -webkit-box-shadow: 0px 5px 10px #b8a3a0;
+          box-shadow: 0px 5px 10px #b8a3a0;
+}
+
+.options div div.music {
+  background-image: url("../../Assets/music.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.options div div.music p {
+  color: #000;
+}
+
+.options div div.music:hover {
+  -webkit-box-shadow: 0px 5px 10px #df5f3f;
+          box-shadow: 0px 5px 10px #df5f3f;
+}
+
+.options div div.game {
+  background-image: url("../../Assets/game.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.options div div.game:hover {
+  -webkit-box-shadow: 0px 5px 10px #11227a;
+          box-shadow: 0px 5px 10px #11227a;
 }
 /*# sourceMappingURL=Options.css.map */
