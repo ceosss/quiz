@@ -22,9 +22,8 @@ const Question: React.FC<QuestionProps> = ({ data, updateScore }) => {
         <button
           onClick={() => checkAnswer(option)}
           disabled={answered === true}
-        >
-          {option}
-        </button>
+          dangerouslySetInnerHTML={{ __html: option }}
+        ></button>
       ))}
     </div>
   );
