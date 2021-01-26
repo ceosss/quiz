@@ -22,7 +22,7 @@ const Options: React.FC<OptionProps> = ({ setOption, setScreen }) => {
           <p>Music</p>
         </div>
         <div onClick={() => updateOption("tv")} className="tv">
-          <p>Television</p>
+          <p>TV Series</p>
         </div>
         <div onClick={() => updateOption("game")} className="game">
           <p>Games</p>
