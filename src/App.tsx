@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import Options from "./Components/Options/Options";
 import Difficulty from "./Components/Difficulty/Difficulty";
-import "./App.css";
 import Questions from "./Components/Questions/Questions";
 import Final from "./Components/Final/Final";
 import Name from "./Components/Name/Name";
+
+import "antd/dist/antd.css";
+import "./App.css";
 
 const App = () => {
   const [screen, setScreen] = useState<number>(1);

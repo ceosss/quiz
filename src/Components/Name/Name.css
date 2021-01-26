@@ -36,7 +36,7 @@
 .name div input {
   width: 300px;
   height: 50px;
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 0 10px;
   border: 2px solid #b480fd;
   -webkit-transition: 400ms ease-in-out;
