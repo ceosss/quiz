@@ -13,7 +13,7 @@ const Options: React.FC<OptionProps> = ({ setOption, setScreen }) => {
   };
   return (
     <div className="options">
-      <h1>Select Category</h1>
+      <h1>Select a Category</h1>
       <div>
         <div onClick={() => updateOption("film")} className="film">
           <p>Film</p>

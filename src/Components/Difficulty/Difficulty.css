@@ -27,6 +27,8 @@
 .difficulty div div {
   width: 250px;
   height: 80px;
+  color: #000;
+  font-size: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,11 +46,39 @@
   -webkit-transition: 400ms ease-in-out;
   transition: 400ms ease-in-out;
   cursor: pointer;
+  font-family: "Pacifico", cursive;
 }
 
 .difficulty div div:hover {
   -webkit-box-shadow: 0 5px 15px #6800fa;
           box-shadow: 0 5px 15px #6800fa;
-  font-size: 22px;
+  font-size: 24px;
+}
+
+.difficulty div div.easy {
+  background-color: #1dd1a1;
+}
+
+.difficulty div div.easy:hover {
+  -webkit-box-shadow: 2px 5px 15px #1dd1a1;
+          box-shadow: 2px 5px 15px #1dd1a1;
+}
+
+.difficulty div div.medium {
+  background-color: #feca57;
+}
+
+.difficulty div div.medium:hover {
+  -webkit-box-shadow: 2px 5px 15px #feca57;
+          box-shadow: 2px 5px 15px #feca57;
+}
+
+.difficulty div div.hard {
+  background-color: #ff6b6b;
+}
+
+.difficulty div div.hard:hover {
+  -webkit-box-shadow: 2px 5px 15px #ff6b6b;
+          box-shadow: 2px 5px 15px #ff6b6b;
 }
 /*# sourceMappingURL=Difficulty.css.map */

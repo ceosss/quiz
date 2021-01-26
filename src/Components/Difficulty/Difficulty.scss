@@ -9,6 +9,8 @@
         div {
             width: 250px;
             height: 80px;
+            color: #000;
+            font-size: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,9 +20,28 @@
             font-size: 18px;
             transition: 400ms ease-in-out;
             cursor: pointer;
+            font-family: "Pacifico", cursive;
             &:hover {
                 box-shadow: 0 5px 15px #6800fa;
-                font-size: 22px;
+                font-size: 24px;
+            }
+            &.easy {
+                background-color: #1dd1a1;
+                &:hover {
+                    box-shadow: 2px 5px 15px #1dd1a1;
+                }
+            }
+            &.medium {
+                background-color: #feca57;
+                &:hover {
+                    box-shadow: 2px 5px 15px #feca57;
+                }
+            }
+            &.hard {
+                background-color: #ff6b6b;
+                &:hover {
+                    box-shadow: 2px 5px 15px #ff6b6b;
+                }
             }
         }
     }
