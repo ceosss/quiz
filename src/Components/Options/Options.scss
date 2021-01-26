@@ -14,47 +14,49 @@
             border-radius: 30px;
             position: relative;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-            opacity: 0.6;
+            // opacity: 0.6;
+            // filter: brightness(0.5);
+            filter: grayscale(100);
+            background-position: center;
+            background-size: cover;
             transition: 400ms ease-in-out;
             cursor: pointer;
             p {
                 position: absolute;
-                top: 0px;
-                right: 20px;
+                margin: 0;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
                 text-transform: uppercase;
-                color: #000;
+                color: #fff;
                 font-weight: bold;
             }
             &:hover {
                 box-shadow: 0px 5px 10px #6800fa;
                 opacity: 0.9;
                 font-size: 24px;
+                filter: grayscale(0);
             }
             &.film {
                 background-image: url("../../Assets/movie.jpg");
-                background-position: center;
-                background-size: cover;
                 &:hover {
                     box-shadow: 0px 5px 10px #b8a3a0;
                 }
             }
             &.music {
                 background-image: url("../../Assets/music.jpg");
-                background-position: center;
-                background-size: cover;
-                p {
-                    color: #000;
-                }
                 &:hover {
                     box-shadow: 0px 5px 10px #df5f3f;
                 }
             }
             &.tv {
+                background-image: url("../../Assets/tv.jpg");
+                &:hover {
+                    box-shadow: 0px 5px 10px #9dbcfb;
+                }
             }
             &.game {
                 background-image: url("../../Assets/game.jpg");
-                background-position: center;
-                background-size: cover;
                 &:hover {
                     box-shadow: 0px 5px 10px #11227a;
                 }

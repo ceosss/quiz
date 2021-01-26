@@ -30,7 +30,10 @@
   position: relative;
   -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-  opacity: 0.6;
+  -webkit-filter: grayscale(100);
+          filter: grayscale(100);
+  background-position: center;
+  background-size: cover;
   -webkit-transition: 400ms ease-in-out;
   transition: 400ms ease-in-out;
   cursor: pointer;
@@ -38,10 +41,13 @@
 
 .options div div p {
   position: absolute;
-  top: 0px;
-  right: 20px;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   text-transform: uppercase;
-  color: #000;
+  color: #fff;
   font-weight: bold;
 }
 
@@ -50,12 +56,12 @@
           box-shadow: 0px 5px 10px #6800fa;
   opacity: 0.9;
   font-size: 24px;
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
 }
 
 .options div div.film {
   background-image: url("../../Assets/movie.jpg");
-  background-position: center;
-  background-size: cover;
 }
 
 .options div div.film:hover {
@@ -65,12 +71,6 @@
 
 .options div div.music {
   background-image: url("../../Assets/music.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-.options div div.music p {
-  color: #000;
 }
 
 .options div div.music:hover {
@@ -78,10 +78,17 @@
           box-shadow: 0px 5px 10px #df5f3f;
 }
 
+.options div div.tv {
+  background-image: url("../../Assets/tv.jpg");
+}
+
+.options div div.tv:hover {
+  -webkit-box-shadow: 0px 5px 10px #9dbcfb;
+          box-shadow: 0px 5px 10px #9dbcfb;
+}
+
 .options div div.game {
   background-image: url("../../Assets/game.jpg");
-  background-position: center;
-  background-size: cover;
 }
 
 .options div div.game:hover {
