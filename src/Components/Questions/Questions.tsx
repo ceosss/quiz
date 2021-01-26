@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import getQuestions from "../../Helper/fetch";
 import Question from "../Question/Question";
+import { Spin } from "antd";
+
+import "./Questions.css";
 
 enum QuestionType {
   multiple,
@@ -20,6 +23,7 @@ interface QuestionsProps {
   option: string;
   difficulty: string;
   score: number;
+  name: string;
   setScreen: React.Dispatch<React.SetStateAction<number>>;
   setScore: (arg0: any) => void;
 }
@@ -28,16 +32,19 @@ const Questions: React.FC<QuestionsProps> = ({
   option,
   difficulty,
   score,
+  name,
   setScreen,
   setScore,
 }) => {
   const [questions, setQuestions] = useState<QuestionsInterface[]>([]);
   const [current, setCurrent] = useState<number>(0);
+  const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
     const fetchQuestions = async () => {
+      setLoading(true);
       const data = await getQuestions(option, difficulty);
       setQuestions(data);
-      console.log(data);
+      setLoading(false);
     };
     fetchQuestions();
   }, [difficulty, option]);
@@ -46,18 +53,30 @@ const Questions: React.FC<QuestionsProps> = ({
   const handleSubmit = () => setScreen(5);
   return (
     <div className="questions">
-      score: {score}
-      {questions.length ? (
-        <Question
-          data={questions[current]}
-          updateScore={updateScore}
-          key={questions[current].question}
-        />
-      ) : null}
-      {current >= questions.length - 1 ? (
-        <button onClick={handleSubmit}>Submit</button>
+      {loading ? (
+        <Spin />
       ) : (
-        <button onClick={nextQuestion}>Next</button>
+        <div className="content">
+          <div className="score-name">
+            <p className="name">{name}</p>
+            <p>
+              Score:
+              <span> {score}</span>
+            </p>
+          </div>
+          {questions.length ? (
+            <Question
+              data={questions[current]}
+              updateScore={updateScore}
+              key={questions[current].question}
+            />
+          ) : null}
+          {current >= questions.length - 1 ? (
+            <button onClick={handleSubmit}>Submit</button>
+          ) : (
+            <button onClick={nextQuestion}>Next</button>
+          )}
+        </div>
       )}
     </div>
   );

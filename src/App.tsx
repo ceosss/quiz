@@ -32,6 +32,7 @@ const App = () => {
             setScreen={setScreen}
             score={score}
             setScore={setScore}
+            name={name}
           />
         );
       case 5:

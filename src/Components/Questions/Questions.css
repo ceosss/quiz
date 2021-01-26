@@ -1,0 +1,41 @@
+.questions {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #8458c2;
+}
+
+.questions .content {
+  background-color: #fff;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 15px;
+  -webkit-box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.15);
+          box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.questions .content .score-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.questions .content .score-name .name {
+  font-style: italic;
+}
+
+.questions .content .score-name span {
+  font-weight: bold;
+}
+/*# sourceMappingURL=Questions.css.map */

@@ -1,0 +1,25 @@
+.questions {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8458c2;
+    .content {
+        background-color: #fff;
+        max-width: 600px;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.15);
+        .score-name {
+            display: flex;
+            justify-content: space-between;
+            .name {
+                font-style: italic;
+            }
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+}
