@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./Name.css";
 
 interface NameProps {
@@ -10,7 +11,9 @@ interface NameProps {
 const Name: React.FC<NameProps> = ({ name, setName, setScreen }) => {
   const updateName = (e: React.ChangeEvent<HTMLInputElement>) =>
     setName(e.target.value);
-  const handleNext = () => setScreen(4);
+  const handleNext = () => {
+    setScreen(4);
+  };
   return (
     <div className="name">
       <div>
