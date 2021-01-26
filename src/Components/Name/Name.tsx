@@ -1,4 +1,5 @@
 import React from "react";
+import "./Name.css";
 
 interface NameProps {
   name: string;
@@ -12,14 +13,16 @@ const Name: React.FC<NameProps> = ({ name, setName, setScreen }) => {
   const handleNext = () => setScreen(4);
   return (
     <div className="name">
-      <p>Hey, Could you please share your name.</p>
-      <input
-        type="text"
-        value={name}
-        onChange={updateName}
-        placeholder="John Doe"
-      />
-      <button onClick={handleNext}>Start</button>
+      <div>
+        <h1>Name</h1>{" "}
+        <input
+          type="text"
+          value={name}
+          onChange={updateName}
+          placeholder="John Doe ..."
+        />
+        <button onClick={handleNext}>Start</button>
+      </div>
     </div>
   );
 };

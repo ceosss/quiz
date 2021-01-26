@@ -1,0 +1,73 @@
+.name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.name div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.name div h1 {
+  text-align: center;
+}
+
+.name div input {
+  width: 300px;
+  height: 50px;
+  border-radius: 20px;
+  padding: 0 10px;
+  border: 2px solid #b480fd;
+  -webkit-transition: 400ms ease-in-out;
+  transition: 400ms ease-in-out;
+}
+
+.name div input:active, .name div input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 2px 5px #6800fa;
+          box-shadow: 0 2px 5px #6800fa;
+}
+
+.name div button {
+  width: 320px;
+  height: 50px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 30px 0;
+  background-color: #6800fa;
+  color: #fff;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: 400ms ease-in-out;
+  transition: 400ms ease-in-out;
+}
+
+.name div button:hover {
+  -webkit-box-shadow: 2px 2px 5px #6800fa;
+          box-shadow: 2px 2px 5px #6800fa;
+}
+/*# sourceMappingURL=Name.css.map */
