@@ -15,7 +15,10 @@ const App = () => {
   const [difficulty, setDifficulty] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [score, setScore] = useState<number>(0);
+  const [open, setOpen] = useState<boolean>(false);
 
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
   const showScreen = () => {
     switch (screen) {
       case 1:
@@ -44,7 +47,8 @@ const App = () => {
   return (
     <div>
       {showScreen()}
-      <LeaderBoard />
+      <p onClick={onOpenModal}>Show Leaderboard</p>
+      <LeaderBoard open={open} onCloseModal={onCloseModal} />
     </div>
   );
 };
