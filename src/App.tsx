@@ -4,7 +4,7 @@ import Difficulty from "./Components/Difficulty/Difficulty";
 import Questions from "./Components/Questions/Questions";
 import Final from "./Components/Final/Final";
 import Name from "./Components/Name/Name";
-import LeaderBoard from "./Components/LeaderBoard/LeaderBoard";
+import { ReactComponent as Logo } from "./Assets/quiz.svg";
 
 import "antd/dist/antd.css";
 import "./App.css";
@@ -40,7 +40,12 @@ const App = () => {
         return <Final score={score} name={name} setScreen={setScreen} />;
     }
   };
-  return <div className="app">{showScreen()}</div>;
+  return (
+    <div className="app">
+      {showScreen()}
+      <Logo className="logo" />
+    </div>
+  );
 };
 
 export default App;
