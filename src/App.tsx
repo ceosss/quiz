@@ -7,6 +7,7 @@ import Name from "./Components/Name/Name";
 
 import "antd/dist/antd.css";
 import "./App.css";
+import LeaderBoard from "./Components/LeaderBoard/LeaderBoard";
 
 const App = () => {
   const [screen, setScreen] = useState<number>(1);
@@ -14,6 +15,7 @@ const App = () => {
   const [difficulty, setDifficulty] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [score, setScore] = useState<number>(0);
+
   const showScreen = () => {
     switch (screen) {
       case 1:
@@ -39,7 +41,12 @@ const App = () => {
         return <Final score={score} name={name} setScreen={setScreen} />;
     }
   };
-  return <div>{showScreen()}</div>;
+  return (
+    <div>
+      {showScreen()}
+      <LeaderBoard />
+    </div>
+  );
 };
 
 export default App;
