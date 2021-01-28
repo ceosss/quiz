@@ -1,7 +1,7 @@
 import { firestore } from "./firebase";
 
 type dataType = {
-  username: string;
+  name: string;
   score: number;
 };
 
