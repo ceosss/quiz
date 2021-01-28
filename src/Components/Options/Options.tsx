@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import LeaderBoard from "../LeaderBoard/LeaderBoard";
+
 import "./Options.css";
 
 type OptionProps = {
@@ -7,6 +9,11 @@ type OptionProps = {
 };
 
 const Options: React.FC<OptionProps> = ({ setOption, setScreen }) => {
+  const [open, setOpen] = useState<boolean>(false);
+
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
+
   const updateOption = (value: string) => {
     setOption(value);
     setScreen(2);
@@ -28,6 +35,10 @@ const Options: React.FC<OptionProps> = ({ setOption, setScreen }) => {
           <p>Games</p>
         </div>
       </div>
+      <button onClick={onOpenModal} className="leaderboard-btn">
+        Show Leaderboard
+      </button>
+      <LeaderBoard open={open} onCloseModal={onCloseModal} />
     </div>
   );
 };

@@ -4,10 +4,10 @@ import Difficulty from "./Components/Difficulty/Difficulty";
 import Questions from "./Components/Questions/Questions";
 import Final from "./Components/Final/Final";
 import Name from "./Components/Name/Name";
+import LeaderBoard from "./Components/LeaderBoard/LeaderBoard";
 
 import "antd/dist/antd.css";
 import "./App.css";
-import LeaderBoard from "./Components/LeaderBoard/LeaderBoard";
 
 const App = () => {
   const [screen, setScreen] = useState<number>(1);
@@ -15,10 +15,6 @@ const App = () => {
   const [difficulty, setDifficulty] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [score, setScore] = useState<number>(0);
-  const [open, setOpen] = useState<boolean>(false);
-
-  const onOpenModal = () => setOpen(true);
-  const onCloseModal = () => setOpen(false);
   const showScreen = () => {
     switch (screen) {
       case 1:
@@ -44,13 +40,7 @@ const App = () => {
         return <Final score={score} name={name} setScreen={setScreen} />;
     }
   };
-  return (
-    <div>
-      {showScreen()}
-      <p onClick={onOpenModal}>Show Leaderboard</p>
-      <LeaderBoard open={open} onCloseModal={onCloseModal} />
-    </div>
-  );
+  return <div className="app">{showScreen()}</div>;
 };
 
 export default App;

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "react-responsive-modal";
 import { firestore } from "../../Helper/firebase";
-import { Table, Tag, Space } from "antd";
+import { Table } from "antd";
 
 import "react-responsive-modal/styles.css";
+import "./LeaderBoard.css";
 
 type scoreType = {
   name: string;
@@ -16,21 +17,30 @@ type leaderBoardProps = {
   onCloseModal: () => void;
 };
 
+type columnType = {
+  title: string;
+  dataIndex: string;
+  key: string;
+};
+
 const LeaderBoard: React.FC<leaderBoardProps> = ({ open, onCloseModal }) => {
   const [leaderBoard, setLeaderBoard] = useState<scoreType[]>([]);
   useEffect(() => {
-    firestore.collection("scores").onSnapshot((data) => {
-      let array: any[] = [];
-      data.docs.map((doc: any) => {
-        array.push({
-          id: doc.id,
-          ...doc.data(),
+    firestore
+      .collection("scores")
+      .orderBy("score", "desc")
+      .onSnapshot((data) => {
+        let array: any[] = [];
+        data.docs.map((doc: any) => {
+          array.push({
+            id: doc.id,
+            ...doc.data(),
+          });
         });
+        setLeaderBoard(array);
       });
-      setLeaderBoard(array);
-    });
   }, []);
-  const columns = [
+  const columns: columnType[] = [
     {
       title: "Name",
       dataIndex: "name",
@@ -44,7 +54,8 @@ const LeaderBoard: React.FC<leaderBoardProps> = ({ open, onCloseModal }) => {
   ];
   return (
     <Modal open={open} onClose={onCloseModal} center>
-      <div>
+      <div className="leaderboard">
+        <h1>Leaderboard</h1>
         <Table columns={columns} dataSource={leaderBoard} />
       </div>
     </Modal>
